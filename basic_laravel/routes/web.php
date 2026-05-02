@@ -13,3 +13,7 @@ Route::get('/list-fakultas', function () {
 Route::get('/add-fakultas', function () {
     return view('fakultas.add-fakultas');
 });
+
+Route::get('/edit-fakultas', function () {
+    return view('fakultas.edit-fakultas');
+});
