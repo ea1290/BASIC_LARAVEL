@@ -16,7 +16,7 @@
         </div>
     </nav>
     {{ $slot}} 
-    {{ $slot }}
+    
     
 </body>
 </html>
