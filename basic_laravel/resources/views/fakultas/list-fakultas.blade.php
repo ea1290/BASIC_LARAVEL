@@ -1,10 +1,18 @@
-<x-layout>
+<x-layout title="List Fakultas">
     <h1>List Fakultas</h1>
+
+    @session('success')
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endsession
+
     
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>No</th>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>No</th>
                     <th>Name Fakutas</th>
                     <th>Nama Dekan</th>
                     <th>Aksi</th>

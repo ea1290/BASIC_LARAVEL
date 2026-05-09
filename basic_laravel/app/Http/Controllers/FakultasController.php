@@ -29,12 +29,18 @@ class FakultasController extends Controller
      */ 
     public function store(Request $request)
     {
+        $request->validate([
+            'name_fakultas' => ['required', 'min:3', 'max:255'],
+            'name_dekan' => ['required', 'min:3', 'max:255']
+        ]);
+
         Fakultas::create([
             'name' => $request->name_fakultas,
-            'dekan' => $request->dekan
+            'dekan' => $request->name_dekan
             ]);
 
-            return redirect('/fakultas');
+            return redirect('/fakultas')->with('success', 'Data Berhasil Di Tambahkan');  
+
     }
 
     /**
@@ -62,11 +68,17 @@ class FakultasController extends Controller
      */
     public function update(Request $request, Fakultas $fakulta)
     {
+        $request->validate([
+            'name_fakultas' => ['required', 'min:3', 'max:255'],
+            'name_dekan' => ['required', 'min:3', 'max:255']
+        ]);
+
         $fakulta->update([
             'name'=>$request->name_fakultas,
             'dekan'=>$request->dekan
         ]);
-        return redirect('/fakultas'); 
+        return redirect('/fakultas')->with('success', 'Data Berhasil Di Ubah'); 
+
     }
 
     /**
@@ -75,6 +87,15 @@ class FakultasController extends Controller
     public function destroy(Fakultas $fakulta)
     {
         $fakulta->delete();
-        return redirect()->back();
+
+        return redirect()->back()->with('success', 'Data Berhasil Di Hapus');
+    
+    
+
+    
+
+        
+
+        
     }
 }

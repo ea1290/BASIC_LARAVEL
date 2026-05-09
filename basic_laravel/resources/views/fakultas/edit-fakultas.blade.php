@@ -1,5 +1,5 @@
 
-<x-layout>
+<x-layout title="Edit-Fakultas">
     <h1>List Fakultas</h1>
     <a href="/add-fakultas">Add New Fakultas</a>
 

@@ -1,4 +1,4 @@
-<x-layout> 
+<x-layout title="Detail-Fakultas"> 
     <div>
         <h1>Detail Fakultas</h1> 
 
