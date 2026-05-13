@@ -1,5 +1,9 @@
-<x-Layout title="Welcome">
-    <h1>Welcome to Belajar</h1>
-    <a href="/fakultas">List Fakultas</a>
-    
-</x-Layout>
+<x-layout title="Welcome">
+    <h1>Belajar Laravel View</h1>
+
+    {{-- cara sambungkan atau pindh halaman --}}
+    <a href="/fakultas"> List Fakultas</a>
+
+
+
+</x-layout>
