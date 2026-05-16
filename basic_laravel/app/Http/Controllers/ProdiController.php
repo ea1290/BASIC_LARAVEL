@@ -6,6 +6,7 @@ use App\Models\Prodi;
 use App\Http\Requests\StoreProdiRequest;
 use App\Http\Requests\UpdateProdiRequest;
 use App\Models\Fakultas;
+use Illuminate\Support\Facades\Storage;
 
 class ProdiController extends Controller
 {
@@ -14,7 +15,10 @@ class ProdiController extends Controller
      */
     public function index()
     {
-        //
+        $prodi = Prodi::with(['fakultas'])->get();
+        return view('prodi.list-prodi', compact('prodi'));
+            
+        
     }
 
     /**
@@ -32,6 +36,19 @@ class ProdiController extends Controller
     public function store(StoreProdiRequest $request)
     {
         $validate = $request->safe();
+
+        $filePath = Storage::disk("public")->putFile(
+            "profile_kaprodi", $validate->file('photo_kaprodi')
+        );
+            Prodi::create([
+                'fakultas_id' => $validate->fakultas_id,
+                'nama_prodi' => $validate->name_prodi,
+                'nama_kaprodi' => $validate->name_kaprodi,
+                'photo_kaprodi' => $filePath
+
+        ]);
+
+        return redirect('/prodi')->with('success', 'Data prodi Berhasil Di Tambahkan');
     }
 
     /**

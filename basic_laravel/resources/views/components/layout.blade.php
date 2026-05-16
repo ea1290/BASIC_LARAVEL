@@ -69,6 +69,31 @@
             <button id="themeToggle" title="Toggle tema" aria-label="Toggle tema">🌙</button>
         </div>
     </nav>
+    
+    <h1>List Fakultas</h1>
+    <ul>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Name Fakutas</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+        </table>
+        @foreach ($fakultas as $item)
+        <tr>
+            <td>{{ $loop->iteration }}</td>
+            <td>{{ $item->name }}</td>
+            <td>{{ $item->dekan }}</td>
+            <td>
+                <button>Edit</button>
+                <button>Hapus</button>
+            </td>
+        </tr>
+        @endforeach
+        </tbody>
+    </ul> 
 
     {{-- Konten Utama --}}
     <main class="container py-4">

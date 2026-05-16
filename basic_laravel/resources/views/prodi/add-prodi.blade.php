@@ -19,7 +19,7 @@
         </div> 
         <div>
             <div class="from-group">
-                <input name="photo_prodi" type="file" accept="image/*" class="form-control" placeholder="Photo Prodi">
+                <input name="photo_kaprodi" type="file" accept="image/*" class="form-control" placeholder="Photo Prodi">
             </div>
         </div>
         <button type="submit" class="btn btn-primary">Simpan</button>

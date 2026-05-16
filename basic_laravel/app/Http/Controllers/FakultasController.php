@@ -89,13 +89,6 @@ class FakultasController extends Controller
         $fakulta->delete();
 
         return redirect()->back()->with('success', 'Data Berhasil Di Hapus');
-    
-    
 
-    
-
-        
-
-        
     }
 }

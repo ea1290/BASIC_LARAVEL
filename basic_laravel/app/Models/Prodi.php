@@ -14,9 +14,14 @@ class Prodi extends Model
 
     protected $fillable = [
         'fakultas_id', 
-        'name', 
+        'nama_prodi', 
         'nama_kaprodi', 
         'photo_kaprodi'
         
     ];
+
+    public function fakultas()
+    {
+        return $this->belongsTo(Fakultas::class);
+    }
 }
