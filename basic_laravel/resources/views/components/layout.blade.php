@@ -63,6 +63,9 @@
                         <a class="nav-link" href="#">Tentang</a>
                     </li>
                 </ul>
+                <form action="/logout" method="post">
+                    <button type="submit" class="btn btn-danger">Logout</button> 
+                </form>
             </div>
 
             {{-- Tombol Dark/Light Mode --}}
